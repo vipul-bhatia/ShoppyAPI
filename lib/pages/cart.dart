@@ -47,17 +47,6 @@ class _CartWidgetState extends State<CartWidget> {
         centerTitle: false,
         elevation: 0,
       ),
-      // body: ListView.builder(
-      //   itemCount: widget.cart.products.length,
-      //   itemBuilder: (context, index) {
-      //     return ListTile(
-      //       title: Text(widget.cart.products[index].title),
-      //       subtitle: Text(widget.cart.products[index].description),
-   
-     //     );
-      //   },
-      // ),
-
       
 
     body: Column(
