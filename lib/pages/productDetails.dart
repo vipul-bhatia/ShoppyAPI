@@ -62,7 +62,9 @@ class productDetails extends StatelessWidget {
         ),
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                   Navigator.pushNamed(context, '/cart');
+              },
               icon: Icon(
                 Icons.shopping_cart_outlined,
                 color: Colors.orange,

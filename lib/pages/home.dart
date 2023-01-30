@@ -184,7 +184,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             children: [
                               Expanded(
                                 child: Text(
-                                  data[index].category,
+                                  data[index].title,
                                   style: TextStyle(
                                     fontFamily: 'Lexend Deca',
                                     color: Colors.white,
@@ -196,6 +196,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             ],
                           ),
                         ),
+
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(8, 0, 8, 8),
                           child: Row(
