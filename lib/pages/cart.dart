@@ -1,12 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:infinity_project/pages/productDetails.dart';
 
-
 class CartWidget extends StatefulWidget {
-    final CartModel cart;
+  final CartModel cart;
 
-  CartWidget({ required this.cart}) ;
+  CartWidget({required this.cart});
 
   @override
   _CartWidgetState createState() => _CartWidgetState();
@@ -37,19 +35,17 @@ class _CartWidgetState extends State<CartWidget> {
         title: Text(
           'My Cart',
           style: TextStyle(
-                fontFamily: 'Lexend Deca',
-                color: Color(0xFF090F13),
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
-              ),
+            fontFamily: 'Lexend Deca',
+            color: Color(0xFF090F13),
+            fontSize: 18,
+            fontWeight: FontWeight.w500,
+          ),
         ),
         actions: [],
         centerTitle: false,
         elevation: 0,
       ),
-      
-
-    body: Column(
+      body: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -84,127 +80,122 @@ class _CartWidgetState extends State<CartWidget> {
                             Text(
                               'Order Total',
                               style: TextStyle(
-                                    fontFamily: 'Lexend Deca',
-                                    color: Colors.black,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.normal,
-                                  ),
+                                fontFamily: 'Lexend Deca',
+                                color: Colors.black,
+                                fontSize: 14,
+                                fontWeight: FontWeight.normal,
+                              ),
                             ),
                             Text(
                               'Total Price',
                               textAlign: TextAlign.end,
                               style: TextStyle(
-                                    fontFamily: 'Lexend Deca',
-                                    color: Color(0xFF090F13),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                                fontFamily: 'Lexend Deca',
+                                color: Color(0xFF090F13),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                           ],
                         ),
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
-                      child: ListView.builder(
-                        padding: EdgeInsets.zero,
-                        shrinkWrap: true,
-                        scrollDirection: Axis.vertical,
-                        itemCount: widget.cart.products.length,
-                        itemBuilder: (context, index) {
-                          final item = widget.cart.products[index];
-                          return Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 8),
-                            child: Container(
-                              width: MediaQuery.of(context).size.width,
-                              height: 100,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 4,
-                                    color: Color(0x3A000000),
-                                    offset: Offset(0, 2),
-                                  )
-                                ],
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        16, 0, 0, 0),
-                                    child: Image.network(
-                                      item.image,
-                                      width: 100,
-                                      height: 100,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                  
-                                  Expanded(
-                                    child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
+                        child: ListView.builder(
+                          padding: EdgeInsets.zero,
+                          shrinkWrap: true,
+                          scrollDirection: Axis.vertical,
+                          itemCount: widget.cart.products.length,
+                          itemBuilder: (context, index) {
+                            final item = widget.cart.products[index];
+                            return Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 8),
+                              child: Container(
+                                width: MediaQuery.of(context).size.width,
+                                height: 120,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      blurRadius: 4,
+                                      color: Color(0x3A000000),
+                                      offset: Offset(0, 2),
+                                    )
+                                  ],
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           16, 0, 0, 0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            item.title,
-                                            style: TextStyle(
-                                                  fontFamily: 'Lexend Deca',
-                                                  color: Color(0xFF090F13),
-                                                  fontSize: 16,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                          ),
-                                               
-                                          Row(
-                                            children: [
-                                              Padding(
-                                                padding:
-                                                    EdgeInsetsDirectional.fromSTEB(
-                                                        0, 4, 0, 0),
-                                                child: Text(
-                                                  '\$${item.price}',
-                                                  style: TextStyle(
-                                                        fontFamily: 'Lexend Deca',
-                                                        color: Color(0xFF090F13),
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                      ),
-                                                ),
-                                              ),
-                                              IconButton(
-              icon: Icon(Icons.delete),
-              onPressed: () {
-                setState(() {
-                  widget.cart.products.removeAt(index);
-                });
-              },
-            ),
-                                            ],
-                                          ),
-                                          
-                                        ],
+                                      child: Image.network(
+                                        item.image,
+                                        width: 100,
+                                        height: 100,
+                                        fit: BoxFit.cover,
                                       ),
                                     ),
-                                  ),
-                                ],
+                                    Expanded(
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            10, 0, 0, 0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              item.title,
+                                              style: TextStyle(
+                                                fontFamily: 'Lexend Deca',
+                                                color: Color(0xFF090F13),
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                            ),
+                                            Row(
+                                              children: [
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(0, 4, 0, 0),
+                                                  child: Text(
+                                                    '\$${item.price}',
+                                                    style: TextStyle(
+                                                      fontFamily: 'Lexend Deca',
+                                                      color: Color(0xFF090F13),
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.normal,
+                                                    ),
+                                                  ),
+                                                ),
+                                                IconButton(
+                                                  icon: Icon(Icons.delete),
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      widget.cart.products
+                                                          .removeAt(index);
+                                                    });
+                                                  },
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
-                          );
-                        },
-                        
-
-                      )
-                    ),
+                            );
+                          },
+                        )),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
                       child: Container(
@@ -233,11 +224,11 @@ class _CartWidgetState extends State<CartWidget> {
                                   Text(
                                     'Order Summary',
                                     style: TextStyle(
-                                          fontFamily: 'Lexend Deca',
-                                          color: Color(0xFF090F13),
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500,
-                                        ),
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF090F13),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -253,21 +244,21 @@ class _CartWidgetState extends State<CartWidget> {
                                   Text(
                                     'Subtotal',
                                     style: TextStyle(
-                                          fontFamily: 'Lexend Deca',
-                                          color: Color(0xFF95A1AC),
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.normal,
-                                        ),
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF95A1AC),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
                                   ),
                                   Text(
                                     '[Price]',
                                     textAlign: TextAlign.end,
                                     style: TextStyle(
-                                          fontFamily: 'Lexend Deca',
-                                          color: Color(0xFF090F13),
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500,
-                                        ),
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF090F13),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -283,21 +274,21 @@ class _CartWidgetState extends State<CartWidget> {
                                   Text(
                                     'Tax',
                                     style: TextStyle(
-                                          fontFamily: 'Lexend Deca',
-                                          color: Color(0xFF95A1AC),
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.normal,
-                                        ),
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF95A1AC),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
                                   ),
                                   Text(
                                     '[Price]',
                                     textAlign: TextAlign.end,
                                     style: TextStyle(
-                                          fontFamily: 'Lexend Deca',
-                                          color: Color(0xFF090F13),
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500,
-                                        ),
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF090F13),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -313,21 +304,21 @@ class _CartWidgetState extends State<CartWidget> {
                                   Text(
                                     'Shipping',
                                     style: TextStyle(
-                                          fontFamily: 'Lexend Deca',
-                                          color: Color(0xFF95A1AC),
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.normal,
-                                        ),
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF95A1AC),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
                                   ),
                                   Text(
                                     '[Price]',
                                     textAlign: TextAlign.end,
-                                    style:TextStyle(
-                                          fontFamily: 'Lexend Deca',
-                                          color: Color(0xFF090F13),
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500,
-                                        ),
+                                    style: TextStyle(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF090F13),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -343,21 +334,21 @@ class _CartWidgetState extends State<CartWidget> {
                                   Text(
                                     'Total',
                                     style: TextStyle(
-                                          fontFamily: 'Lexend Deca',
-                                          color: Color(0xFF95A1AC),
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.normal,
-                                        ),
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF95A1AC),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
                                   ),
                                   Text(
                                     '[Order Total]',
                                     textAlign: TextAlign.end,
                                     style: TextStyle(
-                                          fontFamily: 'Lexend Deca',
-                                          color: Color(0xFF090F13),
-                                          fontSize: 22,
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF090F13),
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -382,17 +373,15 @@ class _CartWidgetState extends State<CartWidget> {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8),
                             child: TextButton(
-                              onPressed: ()  {
-                          
-                              },
+                              onPressed: () {},
                               child: Text(
                                 'Apple Pay',
                                 style: TextStyle(
-                                      fontFamily: 'Lexend Deca',
-                                      color: Color(0xFF090F13),
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
-                                    ),
+                                  fontFamily: 'Lexend Deca',
+                                  color: Color(0xFF090F13),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
                               style: TextButton.styleFrom(
                                 backgroundColor: Colors.orange,
@@ -400,30 +389,26 @@ class _CartWidgetState extends State<CartWidget> {
                                     24, 12, 24, 12),
                               ),
                             ),
-                            ),
                           ),
-                      
+                        ),
                         ClipRRect(
                           borderRadius: BorderRadius.circular(8),
                           child: TextButton(
-                            onPressed: () async {
-                            
-                            },
+                            onPressed: () async {},
                             child: Text(
                               'PayPal',
                               style: TextStyle(
-                                    fontFamily: 'Lexend Deca',
-                                    color: Color(0xFF090F13),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                                fontFamily: 'Lexend Deca',
+                                color: Color(0xFF090F13),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                             style: TextButton.styleFrom(
                               backgroundColor: Colors.orange,
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   24, 12, 24, 12),
                             ),
-                  
                           ),
                         ),
                       ],
@@ -455,9 +440,7 @@ class _CartWidgetState extends State<CartWidget> {
             child: Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 34),
               child: TextButton(
-                onPressed: () async {
-                
-                },
+                onPressed: () async {},
                 child: Text(
                   'Place Order',
                   style: TextStyle(
@@ -476,14 +459,11 @@ class _CartWidgetState extends State<CartWidget> {
                   elevation: 2,
                   shadowColor: Color(0x430F1113),
                 ),
-              
               ),
             ),
           ),
         ],
-    ),
-      );
-
-
+      ),
+    );
   }
 }
